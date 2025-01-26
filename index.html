@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <title>Portfolio</title>
+
+    <style>
+        body {
+            margin: 0 auto;
+            font-family: "Poppins", serif;
+            color: #021d46;
+        }
+        header {
+            padding: 1px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        header a {
+            background-color: #021d46;
+            color: white;
+            width: 120px;
+            font-size: 0.8rem;
+            text-align: center;
+            display: block;
+            padding-block: 8px;
+            margin-right: 20px;
+            border-radius: 20px;
+            text-decoration: none;
+        }
+        header i {
+            margin-left: 5px;
+        }
+        header h2 {
+            margin: 10px 20px;
+        }
+        #heroSection {
+            background-color: #e1e1e3;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding-block: 60px;
+            position: relative;
+        }
+        #heroSection span {
+            color: #0084ff;
+        }
+        #heroSection img {
+            height: 180px;
+        }
+        .highlight {
+            position: absolute;
+            bottom: 0;
+            transform: translateY(50%);
+            background-color: white;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+            border-radius: 60px;
+            box-shadow: 0 0 4px 2px #021d463a;
+        }
+        .highlight > div {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            width: 110px;
+        }
+        .highlight > div:not(:first-child) {
+            width: 130px;
+            justify-content: center;
+
+        }
+        .highlight > div:first-child {
+            margin-left: 20px;
+        }
+        .highlight > div:last-child {
+            margin-right: 20px;
+        }
+        .highlight i {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background-color: #0084ff;
+            color: white;
+            display: grid;
+            place-items: center;
+            font-size: 0.8rem;
+        }
+        .highlight p {
+            margin-block: -5px;
+            font-size: 0.7rem;
+        }
+        .highlight p > span {
+            font-weight: 600;
+        }
+        @media (max-width: 660px) {
+            #heroSection img {
+                height: 120px;
+            }
+            #heroSection h2 {
+                font-size: 1rem;
+            }
+        }
+        @media (max-width: 560px) {
+            .highlight {
+                padding: 15px 0;
+                gap: 5px;
+            }
+        }
+        @media (max-width: 500px) {
+            header h2 {
+                font-size: 1.2rem;
+            }
+            #heroSection {
+                padding: 40px 0 60px 0;
+            }
+            #heroSection img {
+                height: 80px;
+            }
+            #heroSection h2 {
+                font-size: 0.8rem;
+            }
+
+            .highlight {
+                padding: 10px 0;
+                gap: 10px;
+            }
+            .highlight > div {
+                flex-direction: column;
+                width: 60px;
+            }
+            .highlight > div:not(:first-child) {
+                width: 60px;
+            }
+            .highlight > div:first-child {
+                margin-left: 20px;
+            }
+            .highlight > div:nth-child(2) {
+                width: 85px;
+            }
+            .highlight p {
+                text-align: center;
+            }
+        }
+        #briefing {
+            padding-top: 60px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 0.8rem;
+        }
+        #briefing p {
+            margin-inline: 30px;
+        }
+        @media (max-width: 660px) {
+            #briefing {
+                font-size: 0.7rem;
+            }
+        }
+        
+
+        #skills {
+            text-align: center;
+            margin: 0 20px;
+        }
+        .skillsContainer {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .skillBox {
+            background-color: #e1e1e3;
+            width: 80px;
+            aspect-ratio: 1/1;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .skillBox p {
+            margin: 0;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        .skillBox img {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+
+        #projects {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 700px;
+        }
+        .projectsContainer {
+            overflow-x: scroll;
+            scrollbar-width: none;
+            padding: 10px 20px;
+            display: flex;
+            gap: 15px;
+            margin: 0 auto;
+            /* margin-inline: 20px; */
+        }
+        .projectBox {
+            background-color: #f9f9ff;
+            box-shadow: 0 0 4px 2px #021d4622;
+            width: 260px;
+            border-radius: 10px;
+        }
+        .projectBox img {
+            width: 250px;
+            height: 160px;
+            margin: 5px;
+            border-radius: 5px;
+            object-fit: cover;
+        }
+        .projectBox p {
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+
+        #contactMe {
+            text-align: center;
+            margin: 0 auto;
+            background-color: #0084ff;
+            color: white;
+            padding-block: 1px;
+            margin-top: 40px;
+        }
+        #contactMe p {
+            padding-inline: 20px;
+            margin: 0 auto;
+            max-width: 640px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.816);
+        }
+        #contactMe a {
+            background-color:white;
+            text-decoration: none;
+            padding: 5px 10px;
+            margin: 0 auto;
+            width: 110px;
+            display: block;
+            border-radius: 20px;
+            margin-block: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #021d46;
+        }
+        #contactMe a > i {
+            margin-left: 6px;
+        }
+
+        #language {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        #language p {
+            margin: 5px;
+            font-weight: 500;
+            font-size: 0.8rem;
+        }
+
+        footer {
+            padding: 1px 0;
+            padding-bottom: 20px;
+            text-align: center;
+            background-color: #021d46;
+            color: rgba(255, 255, 255, 0.74);
+        }
+        footer i {
+            margin-right: 5px;
+        }
+        footer p {
+            font-size: 0.8rem;
+            margin: 10px 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h2>Portfolio</h2>
+        <a href="https://wa.me/+917005194248">Contact Me <i class="fa-solid fa-paper-plane"></i></a>
+    </header>
+
+    <!-- hero section -->
+    <section id="heroSection">
+        <div>
+            <h2>
+                Nice to meet you ! <br>
+                I’m <span>Salam Priyansu Meitei,</span> <br>
+                a creative <span>Frontend Developer.</span>
+            </h2>
+        </div>
+
+        <div>
+            <img src="https://psmluwang.github.io/portfolio/portfolio-img/me.png" alt="">
+        </div>
+
+        <div class="highlight">
+            <div>
+                <i class="fa-solid fa-user-tie"></i>
+                <div>
+                    <p>Fresher</p>
+                    <p><span>Experience</span></p>
+                </div>
+            </div>
+            |
+            <div>
+                <i class="fa-regular fa-handshake"></i>
+                <div>
+                    <p>Professional</p>
+                    <p><span>Communication</span></p>
+                </div>
+            </div>
+            |
+            <div>
+                <i class="fa-solid fa-compass-drafting"></i>
+                <div>
+                    <p>2 projects</p>
+                    <p><span>Completed</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="briefing">
+        <p>
+            Coding is my passion. I started my journey with some references. In the early stage I faced many obstacles and learn everything from my mistakes in hands-on practices. But now I have full of skills in Frontend Development after completed a course on frontend development. Currently I am looking for internship for experience.
+        </p>
+    </section>
+
+    <section id="skills">
+        <h4>My Skills</h4>
+        <div class="skillsContainer">
+            <div class="skillBox">
+                <img src="https://psmluwang.github.io/portfolio/portfolio-img/html.png" alt="">
+                <p>HTML 5</p>
+            </div>
+            <div class="skillBox">
+                <img src="https://psmluwang.github.io/portfolio/portfolio-img/css.jpg" alt="">
+                <p>CSS 3</p>
+            </div>
+            <div class="skillBox">
+                <img src="https://psmluwang.github.io/portfolio/portfolio-img/js.png" alt="">
+                <p>Javascript</p>
+            </div>
+            <div class="skillBox">
+                <img src="https://psmluwang.github.io/portfolio/portfolio-img/git.png" alt="">
+                <p>Git</p>
+            </div>
+            <div class="skillBox">
+                <img src="https://psmluwang.github.io/portfolio/portfolio-img/github.jpg" alt="">
+                <p>GitHub</p>
+            </div>
+            <div class="skillBox">
+                <img src="https://psmluwang.github.io/portfolio/portfolio-img/figma.png" alt="">
+                <p>Figma</p>
+            </div>
+            <div class="skillBox">
+                <img src="https://dyma.fr/blog/content/images/size/w960/2024/08/node1200x628-1.webp" alt="">
+                <p>Node Js</p>
+            </div>
+            <div class="skillBox">
+                <img src="https://psmluwang.github.io/portfolio/portfolio-img/react.png" alt="">
+                <p>React</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="projects">
+        <h4>Projects</h4>
+        <div class="projectsContainer">
+            <div class="projectBox" onclick="window.location='https://psmluwang.github.io/up-work/food-landingpage.html'">
+                <img src="Screenshot 2025-01-26 160332.png" alt="">
+                <p>Landing Page</p>
+            </div>
+            <div class="projectBox" onclick="window.location='https://psmluwang.github.io/assassin/'">
+                <img src="Screenshot 2025-01-26 162630.png" alt="">
+                <p>E-sports services</p>
+            </div>
+            <div class="projectBox" onclick="window.location='https://psmluwang.github.io/ctd/landingPage.html'">
+                <img src="Screenshot 2025-01-26 163135.png" alt="">
+                <p>LMS</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contactMe">
+        <h4>Have a Project on Your Mind ?</h4>
+        <p>
+            We'd love to help bring it to life! Whether you're looking to create a simple online presence or a complex web application, I'm here to guide you every step of the way. Contact me today to discuss your project and let's turn your vision into a reality.
+        </p>
+        <a href="https://wa.me/+917005194248">Contact Me <i class="fa-solid fa-paper-plane"></i></a>
+    </section>
+
+    <section id="language">
+        <h4>Languages I Speak</h4>
+        <p>English <i class="fa-solid fa-check"></i></p>
+        <p>Hindi <i class="fa-solid fa-check"></i></p>
+        <p>Manipuri <i class="fa-solid fa-check"></i></p>
+    </section>
+
+    <footer>
+        <h4>Contact Info :</h4>
+        <p><i class="fa-solid fa-envelope"></i> spriyansumeitei@gmail.com</p>
+        <p><i class="fa-solid fa-phone"></i> +91-7005194248</p>
+        <p><i class="fa-solid fa-location-dot"></i> Imphal, Manipur, 795009, India.</p>
+    </footer>
+</body>
+</html>
