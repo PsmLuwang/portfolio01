@@ -40,7 +40,8 @@
             margin: 10px 20px;
         }
         #heroSection {
-            background-color: #e1e1e3;
+            background-color: #e1e1e31d;
+            /* background-color: #e1e1e3; */
             display: flex;
             justify-content: space-around;
             align-items: center;
@@ -149,11 +150,14 @@
             }
         }
         #briefing {
-            padding-top: 60px;
             text-align: center;
+            width: calc(100% - 40px);
             max-width: 800px;
             margin: 0 auto;
+            margin-top: 80px;
             font-size: 0.8rem;
+            border-radius: 10px;
+            padding-bottom: 15px;
         }
         #briefing p {
             margin-inline: 30px;
@@ -178,12 +182,18 @@
             margin: 0 auto;
         }
         .skillBox {
-            background-color: #e1e1e3;
             width: 80px;
             aspect-ratio: 1/1;
             padding: 10px;
             border-radius: 10px;
         }
+        /* .skillBox {
+            background-color: #e1e1e3;
+            width: 80px;
+            aspect-ratio: 1/1;
+            padding: 10px;
+            border-radius: 10px;
+        } */
         .skillBox p {
             margin: 0;
             font-size: 0.8rem;
@@ -200,7 +210,8 @@
         #projects {
             text-align: center;
             margin: 0 auto;
-            max-width: 700px;
+            max-width: 900px;
+            
         }
         .projectsContainer {
             overflow-x: scroll;
@@ -216,6 +227,7 @@
             box-shadow: 0 0 4px 2px #021d4622;
             width: 260px;
             border-radius: 10px;
+            z-index: 2;
         }
         .projectBox img {
             width: 250px;
@@ -232,11 +244,18 @@
             font-size: 0.8rem;
         }
 
-        #contactMe {
+        /* #contactMe {
             text-align: center;
             margin: 0 auto;
             background-color: #0084ff;
             color: white;
+            padding-block: 1px;
+            margin-top: 40px;
+        } */
+        #contactMe {
+            text-align: center;
+            margin: 0 auto;
+            color: rgb(0, 0, 0);
             padding-block: 1px;
             margin-top: 40px;
         }
@@ -245,7 +264,7 @@
             margin: 0 auto;
             max-width: 640px;
             font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.816);
+            /* color: rgba(255, 255, 255, 0.816); */
         }
         #contactMe a {
             background-color:white;
@@ -288,17 +307,192 @@
             font-size: 0.8rem;
             margin: 10px 20px;
         }
+
+        .bgSection {
+            position: fixed;
+            height: 100dvh;
+            width: 100%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .bg {
+            position: absolute;
+            border-radius: 50%;
+            animation: bgMotion 4s infinite;
+            /* z-index: -1; */
+            filter: blur(80px);
+        }
+        @keyframes bgMotion {
+            70% {
+                transform: scale(1.2) translate(50px);
+            }
+        }
+        .bg:nth-child(1) {
+            height: 90%;
+            width: 80%;
+            background-color: #ff057c;
+            left: -29%;
+            top: -10%;
+        }
+        .bg:nth-child(2) {
+            height: 80%;
+            width: 70%;
+            background-color: #800f86;
+            right: -12%;
+            top: -12%;
+            animation-delay: 4s;
+        }
+        .bg:nth-child(3) {
+            height: 65%;
+            width: 80%;
+            background-color: #81d9ff;
+            left: -15%;
+            bottom: -20%;
+            animation-delay: 0.3s;
+        }
+        .bg:nth-child(4) {
+            height: 50%;
+            width: 75%;
+            background-color: #d01ebe;
+            right: -10%;
+            bottom: -18%;
+            animation-delay: 1.2s;
+        }
+
+
+        .glassmorphism {
+            backdrop-filter: blur(4px);
+            background-color: rgba(255, 255, 255, 0.1);
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.1));
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+
+
+
+        /* /////////////// */
+        /* cube start */
+        .boxSection {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1000px;
+            position: fixed;
+        }
+        .box {
+            width: 30%;
+            max-width: 200px;
+            aspect-ratio: 1/1;
+            transform-style: preserve-3d;
+            animation: animate 12s infinite;
+        }
+        @keyframes animate {
+            0% {
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+            25% {
+                transform: rotateX(-45deg) rotateY(-45deg);
+            }
+            50% {
+                transform: rotateX(45deg) rotateY(45deg);
+            }
+            75% {
+                transform: rotateX(-45deg) rotateY(45deg);
+            }
+            100% {
+                transform: rotateX(45deg) rotateY(-45deg);
+            }
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(rgba(70, 124, 210, 0.298), rgba(0, 30, 77, 0.363));
+            border: 1px solid rgba(37, 37, 37, 0.592);
+            font-size: 1rem;
+            box-sizing: border-box; 
+            position: absolute;
+            transition: all 1s;
+        }
+        #front {
+            transform: translateZ(var(--height-frontHalf));
+        }
+        #back {
+            transform: translateZ(var(--height-backHalf));
+        }
+        #left {
+            right: 50%;
+            transform: rotateY(-90deg);
+        }
+        #right {
+            left: 50%;
+            transform: rotateY(90deg);
+        }
+        #top {
+            bottom: 50%;
+            transform: rotateX(90deg);
+        }
+        #bottom {
+            top: 50%;
+            transform: rotateX(-90deg);
+        }
+        .expand > #front {
+            transform: translateZ(calc(var(--height-frontHalf) + 30px)) rotateY(360deg);
+        }
+        .expand > #back {
+            transform: translateZ(calc(var(--height-backHalf) - 30px)) rotateY(360deg);
+        }
+        .expand > #left {
+            right: calc(50% + 30px);
+        }
+        .expand > #right {
+            left: calc(50% + 30px);
+        }
+        .expand > #top {
+            bottom: calc(50% + 30px);
+        }
+        .expand > #bottom {
+            top: calc(50% + 30px);
+        }
+        /* cube end */
     </style>
 </head>
 
 <body>
+    <section class="boxSection">
+        <div class="box">
+            <div class="card" id="front"></div>
+            <div class="card" id="back"></div>
+            <div class="card" id="left"></div>
+            <div class="card" id="right"></div>
+            <div class="card" id="top"></div>
+            <div class="card" id="bottom"></div>
+        </div>
+    </section>
+    <section class="bgSection">
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+        <div class="bg"></div>
+    </section>
     <header>
         <h2>Portfolio</h2>
         <a href="https://wa.me/+917005194248">Contact Me <i class="fa-solid fa-paper-plane"></i></a>
     </header>
 
     <!-- hero section -->
-    <section id="heroSection">
+    <section id="heroSection" class="glassmorphism">
         <div>
             <h2>
                 Nice to meet you ! <br>
@@ -338,7 +532,8 @@
         </div>
     </section>
 
-    <section id="briefing">
+    <section id="briefing" class="glassmorphism">
+        <h2>Briefing</h2>
         <p>
             Coding is my passion. I started my journey with some references. In the early stage I faced many obstacles and learn everything from my mistakes in hands-on practices. But now I have full of skills in Frontend Development after completed a course on frontend development. Currently I am looking for internship for experience.
         </p>
@@ -347,39 +542,39 @@
     <section id="skills">
         <h4>My Skills</h4>
         <div class="skillsContainer">
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://psmluwang.github.io/portfolio/portfolio-img/html.png" alt="">
                 <p>HTML 5</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://psmluwang.github.io/portfolio/portfolio-img/css.jpg" alt="">
                 <p>CSS 3</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://psmluwang.github.io/portfolio/portfolio-img/js.png" alt="">
                 <p>Javascript</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://psmluwang.github.io/portfolio/portfolio-img/git.png" alt="">
                 <p>Git</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://psmluwang.github.io/portfolio/portfolio-img/github.jpg" alt="">
                 <p>GitHub</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://psmluwang.github.io/portfolio/portfolio-img/figma.png" alt="">
                 <p>Figma</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://dyma.fr/blog/content/images/size/w960/2024/08/node1200x628-1.webp" alt="">
                 <p>Node Js</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="https://psmluwang.github.io/portfolio/portfolio-img/react.png" alt="">
                 <p>React</p>
             </div>
-            <div class="skillBox">
+            <div class="skillBox glassmorphism">
                 <img src="tailwindcss.jpg" alt="">
                 <p>Tailwind CSS</p>
             </div>
@@ -405,7 +600,7 @@
         </div>
     </section>
 
-    <section id="contactMe">
+    <section id="contactMe" class="glassmorphism">
         <h4>Have a Project on Your Mind ?</h4>
         <p>
             We'd love to help bring it to life! Whether you're looking to create a simple online presence or a complex web application, I'm here to guide you every step of the way. Contact me today to discuss your project and let's turn your vision into a reality.
@@ -426,5 +621,27 @@
         <p><i class="fa-solid fa-phone"></i> +91-7005194248</p>
         <p><i class="fa-solid fa-location-dot"></i> Imphal, Manipur, 795009, India.</p>
     </footer>
+
+    <script>
+        const front = document.getElementById('front');
+        const updateTranslateZ = () => {
+            const height = front.offsetHeight;
+            document.documentElement.style.setProperty('--height-frontHalf', `${height/2}px`);
+            document.documentElement.style.setProperty('--height-backHalf', `-${height/2}px`);
+        };
+
+        // Create a ResizeObserver to watch for changes in the element's size
+        const observer = new ResizeObserver(entries => {
+        for (let entry of entries) {
+            updateTranslateZ();
+        }
+        });
+        observer.observe(front);
+        updateTranslateZ();
+
+        setInterval(() => {
+            document.querySelector(".box").classList.toggle('expand')
+        }, 3000);
+    </script>
 </body>
 </html>
