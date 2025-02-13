@@ -49,7 +49,7 @@
             position: relative;
         }
         #heroSection span {
-            color: #0084ff;
+            color: #0048ff;
         }
         #heroSection img {
             height: 180px;
@@ -287,6 +287,19 @@
             text-align: center;
             padding-bottom: 20px;
         }
+        .lanContainer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            max-width: 280px;
+            margin: auto;
+            gap: 10px;
+        }
+        .lanContainer > div {
+            border-radius: 4px;
+            aspect-ratio: 3/2;
+            display: grid;
+            place-items: center;
+        }
         #language p {
             margin: 5px;
             font-weight: 500;
@@ -418,8 +431,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: radial-gradient(rgba(70, 124, 210, 0.298), rgba(0, 30, 77, 0.363));
-            border: 1px solid rgba(37, 37, 37, 0.592);
+            background: radial-gradient(rgba(70, 124, 210, 0.216), rgba(0, 30, 77, 0.265));
+            border: 1px solid rgba(185, 185, 185, 0.773);
             font-size: 1rem;
             box-sizing: border-box; 
             position: absolute;
@@ -603,16 +616,24 @@
     <section id="contactMe" class="glassmorphism">
         <h4>Have a Project on Your Mind ?</h4>
         <p>
-            We'd love to help bring it to life! Whether you're looking to create a simple online presence or a complex web application, I'm here to guide you every step of the way. Contact me today to discuss your project and let's turn your vision into a reality.
+            I'd love to help bring it to life! Whether you're looking to create a simple online presence or a complex web application, I'm here to guide you every step of the way. Contact me today to discuss your project and let's turn your vision into a reality.
         </p>
         <a href="https://wa.me/+917005194248">Contact Me <i class="fa-solid fa-paper-plane"></i></a>
     </section>
 
     <section id="language">
         <h4>Languages I Speak</h4>
-        <p>English <i class="fa-solid fa-check"></i></p>
-        <p>Hindi <i class="fa-solid fa-check"></i></p>
-        <p>Manipuri <i class="fa-solid fa-check"></i></p>
+        <div class="lanContainer">
+            <div class="glassmorphism">
+                <p>English <i class="fa-solid fa-check"></i></p>
+            </div>
+            <div class="glassmorphism">
+                <p>Hindi <i class="fa-solid fa-check"></i></p>
+            </div>
+            <div class="glassmorphism">
+                <p>Manipuri <i class="fa-solid fa-check"></i></p>
+            </div>
+        </div>
     </section>
 
     <footer>
